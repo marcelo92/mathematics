@@ -7,17 +7,32 @@
 $ pip3 install -r /path/to/requirements.txt
 ```
 
-## Mandelbrot
+## Fractals
+
+### Mandelbrot
 Explanation: https://en.wikipedia.org/wiki/Mandelbrot_set
 
 Command: 
 ```shell
-$ python3 mandelbrot.py
+$ python3 fractal.py mandelbrot
 ```
 
 Result
+
 ![mandelbrot](images/mandelbrot.png)
 
+### Burning Ship
+
+Explanation: https://en.wikipedia.org/wiki/Burning_Ship_fractal
+
+Command: 
+```shell
+$ python3 fractal.py ship
+```
+
+Result
+
+![mandelbrot](images/burning_ship.png)
 
 ## Sierpinski triangle
 Explanation: https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle
@@ -28,6 +43,7 @@ $ python3 siepinski.py
 ```
 
 Result
+
 ![sierpinski](images/sierpinski.png)
 
 ## Game of life
