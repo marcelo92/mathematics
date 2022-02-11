@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input placeholder="one" class="valid" type="text" maxlength=1 size=2/><input type="checkbox" class="correct">
+        <input placeholder="two" class="valid" type="text" maxlength=1 size=2/><input type="checkbox" class="correct">
+        <input placeholder="three" class="valid" type="text" maxlength=1 size=2/><input type="checkbox" class="correct">
+        <input placeholder="four" class="valid" type="text" maxlength=1 size=2/><input type="checkbox" class="correct">
+        <input placeholder="five" class="valid" type="text" maxlength=1 size=2/><input type="checkbox" class="correct">
+        <br><input placeholder="invlid" id="invalid" type="text"/>
+        <button onclick="sendData()">OK</button>
+        <div id="total"></div>
+        <div id="possibilities"></div>
+    </body>
+    <script>
+        function sendData() {
+            var valid=$("#valid").val()
+            var invalid=$("#invalid").val()
+            $.post("/exclude",{
+                    valid: valid,
+                    invalid: invalid,
+                    other: "test"
+                }).done(function(response) {
+                    $("#total").html(eval(response).length)
+                    $("#possibilities").html(response)
+            })
+        }
+    </script>
+    <style>
+        .correct {
+            margin-right: 50px
+        }
+    </style>
+</html>
